@@ -16,7 +16,7 @@ body {
   height: 100vh;
   justify-content: center;
   gap: 20px;
-
+  
   figure {
     overflow: hidden;
     width: 100% /*180px;*/;
@@ -31,6 +31,16 @@ body {
       transform: scale(2.3);
       object-position: top 17px right -41px;
     }
+  }
+
+  .message-block {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    background-color: #f9f9f9;
   }
 
   h1 {
