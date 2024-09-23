@@ -36,11 +36,13 @@ body {
   .message-block {
     margin: 20px;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 10px;
     width: 80%;
     max-width: 600px;
-    background-color: #f9f9f9;
+    background-color: rgba(255, 255, 255, 0.3); /* Fundo branco quase transparente */
+    backdrop-filter: blur(5px); /* Adiciona um leve desfoque no fundo */
+    color: #000; /* Cor do texto */
   }
 
   h1 {
