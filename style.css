@@ -45,6 +45,31 @@ body {
     color: #000; /* Cor do texto */
   }
 
+  .language-buttons {
+    display: flex;
+    gap: 10px;
+    margin: 20px;
+  }
+  
+  .language-buttons button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    width: 120px;
+    height: 40px;
+    background-color: #ffffff;
+    color: #333;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .language-buttons button:hover {
+    background-color: #ffffff00;
+    border: 1px solid white;
+    color: white;
+  }
+
   h1 {
     margin: 0;
     font-size: 24px;
