@@ -8,66 +8,16 @@
     <link rel="stylesheet" href="style.css" />
     <style>
       /* Estilo para o toggle button com bandeiras */
-      .language-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 20px 0;
-      }
-
-      .toggle-switch {
-        position: relative;
-        width: 60px;
-        height: 34px;
-        margin: 0 10px;
-      }
-      .toggle-switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-      }
-      .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        transition: 0.4s;
-        border-radius: 34px;
-      }
-      .slider:before {
-        position: absolute;
-        content: "";
-        height: 26px;
-        width: 26px;
-        left: 4px;
-        bottom: 4px;
-        background-color: white;
-        transition: 0.4s;
-        border-radius: 50%;
-      }
-      input:checked + .slider {
-        background-color: #2196f3;
-      }
-      input:checked + .slider:before {
-        transform: translateX(26px);
-      }
-
-      /* Estilo para os ícones de bandeira */
-      .flag-icon {
-        font-size: 24px;
-      }
+      
     </style>
   </head>
   <body>
     <header>
       <figure>
-        <img src="/assets/profile.jpg" alt="Warren Wong" />
+        <img src="/assets/profile.jpg" alt="Ju Canejo" />
       </figure>
       <h1>Jullie Canejo</h1>
-      <h2>🫶🏻 Motorista / Driver</h2>
+      <h2 id="role">🫶🏻 Motorista</h2> <!-- Adicionado o id "role" -->
     </header>
 
     <!-- Toggle com bandeiras -->
@@ -124,14 +74,17 @@
       const toggle = document.getElementById("languageToggle");
       const portugueseBlock = document.getElementById("portuguese");
       const englishBlock = document.getElementById("english");
+      const role = document.getElementById("role"); // Seleciona o elemento h2 para alterar o texto
 
       toggle.addEventListener("change", function () {
         if (this.checked) {
           portugueseBlock.style.display = "none";
           englishBlock.style.display = "block";
+          role.innerHTML = "🫶🏻 Driver"; // Altera o texto para o inglês
         } else {
           portugueseBlock.style.display = "block";
           englishBlock.style.display = "none";
+          role.innerHTML = "🫶🏻 Motorista"; // Altera o texto para o português
         }
       });
     </script>
