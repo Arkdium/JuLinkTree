@@ -6,6 +6,53 @@
     <title>Jullie Canejo - Linktree</title>
     <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Estilo para o toggle button */
+      .toggle-switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+      }
+      .toggle-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 34px;
+      }
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+      input:checked + .slider {
+        background-color: #2196f3;
+      }
+      input:checked + .slider:before {
+        transform: translateX(26px);
+      }
+      /* Estilo adicional opcional */
+      .toggle-label {
+        margin-left: 10px;
+        font-size: 16px;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -16,52 +63,68 @@
       <h2>🫶🏻 Motorista / Driver</h2>
     </header>
 
-    <div class="language-buttons">
-        <a href="#portuguese">
-          <button>🇧🇷 Português</button>
-        </a>
-        <a href="#english">
-          <button>🇺🇸 English</button>
-        </a>
-      </div>
+    <div class="language-toggle">
+      <!-- Toggle switch -->
+      <label class="toggle-switch">
+        <input type="checkbox" id="languageToggle" />
+        <span class="slider"></span>
+      </label>
+      <span class="toggle-label">🇧🇷/🇺🇸</span>
+    </div>
 
     <main>
-        <!-- Bloco em Português -->
-        <div id="portugues" class="message-block">
-          <p>
-            🇧🇷 <br />
-            Olá querido passageiro! Seja muito bem-vindo. <br />
-            Meu nome é Jullie, ou simplesmente Ju, e serei a sua motorista de hoje. <br />
-            Sintam-se à vontade para ajustar a temperatura do A/C, escolher a playlist ou perguntar alguma coisa sobre o trajeto. <br />
-            Estou aqui para garantir uma viagem segura, tranquila e confortável. <br />
-            O carro disponhe de carregadores para todos os modelos de celular. <br />
-            Agradeço por escolherem o meu serviço. <br />
-            Se gostarem da experiência, deixem uma avaliação positiva com 5 estrelas. <br />
-            Desejo a todos uma excelente corrida!
-          </p>
-        </div>
-  
-        <!-- Bloco em Inglês -->
-        <div id="english" class="message-block">
-          <p>
-            🇺🇸 <br />
-                Hello dear passenger! Welcome aboard. <br />
-                My name is Jullie, or simply Ju, and I will be your driver today. <br />
-                Feel free to adjust the A/C temperature, pick a playlist, or ask any questions about the route. <br />
-                I am here to ensure a safe, calm, and comfortable journey. <br />
-                The car is equipped with chargers for all types of mobile phones. <br />
-                Thank you for choosing my service. <br />
-                If you enjoy the ride, please leave a positive 5-star rating. <br />
-                Wishing you all an excellent trip! <br /><br />
+      <!-- Bloco em Português -->
+      <div id="portuguese" class="message-block">
+        <p>
+          🇧🇷 <br />
+          Olá querido passageiro! Seja muito bem-vindo. <br />
+          Meu nome é Jullie, ou simplesmente Ju, e serei a sua motorista de hoje. <br />
+          Sintam-se à vontade para ajustar a temperatura do A/C, escolher a playlist ou perguntar alguma coisa sobre o trajeto. <br />
+          Estou aqui para garantir uma viagem segura, tranquila e confortável. <br />
+          O carro disponhe de carregadores para todos os modelos de celular. <br />
+          Agradeço por escolherem o meu serviço. <br />
+          Se gostarem da experiência, deixem uma avaliação positiva com 5 estrelas. <br />
+          Desejo a todos uma excelente corrida!
+        </p>
+      </div>
 
-                🚨 <strong>Important Notice</strong>: <br />
-                I speak only Portuguese, but don’t worry! We can easily communicate using Google Translate. Feel free to use it if you have any questions or need assistance during the trip. <br />
-                Thank you for your understanding and have a wonderful ride! 😊
-          </p>
-        </div>
-      </main>
+      <!-- Bloco em Inglês -->
+      <div id="english" class="message-block" style="display: none;">
+        <p>
+          🇺🇸 <br />
+          Hello dear passenger! Welcome aboard. <br />
+          My name is Jullie, or simply Ju, and I will be your driver today. <br />
+          Feel free to adjust the A/C temperature, pick a playlist, or ask any questions about the route. <br />
+          I am here to ensure a safe, calm, and comfortable journey. <br />
+          The car is equipped with chargers for all types of mobile phones. <br />
+          Thank you for choosing my service. <br />
+          If you enjoy the ride, please leave a positive 5-star rating. <br />
+          Wishing you all an excellent trip! <br /><br />
+          🚨 <strong>Important Notice</strong>: <br />
+          I speak only Portuguese, but don’t worry! We can easily communicate using Google Translate. Feel free to use it if you have any questions or need assistance during the trip. <br />
+          Thank you for your understanding and have a wonderful ride! 😊
+        </p>
+      </div>
+    </main>
+
     <footer>
       <p>&copy Arkdium</p>
     </footer>
+
+    <script>
+      const toggle = document.getElementById("languageToggle");
+      const portugueseBlock = document.getElementById("portuguese");
+      const englishBlock = document.getElementById("english");
+
+      toggle.addEventListener("change", function () {
+        if (this.checked) {
+          portugueseBlock.style.display = "none";
+          englishBlock.style.display = "block";
+        } else {
+          portugueseBlock.style.display = "block";
+          englishBlock.style.display = "none";
+        }
+      });
+    </script>
   </body>
 </html>
