@@ -7,12 +7,19 @@
     <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
     <style>
-      /* Estilo para o toggle button */
+      /* Estilo para o toggle button com bandeiras */
+      .language-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 0;
+      }
+
       .toggle-switch {
         position: relative;
-        display: inline-block;
         width: 60px;
         height: 34px;
+        margin: 0 10px;
       }
       .toggle-switch input {
         opacity: 0;
@@ -47,10 +54,10 @@
       input:checked + .slider:before {
         transform: translateX(26px);
       }
-      /* Estilo adicional opcional */
-      .toggle-label {
-        margin-left: 10px;
-        font-size: 16px;
+
+      /* Estilo para os ícones de bandeira */
+      .flag-icon {
+        font-size: 24px;
       }
     </style>
   </head>
@@ -63,13 +70,15 @@
       <h2>🫶🏻 Motorista / Driver</h2>
     </header>
 
+    <!-- Toggle com bandeiras -->
     <div class="language-toggle">
+      <span class="flag-icon">🇧🇷</span>
       <!-- Toggle switch -->
       <label class="toggle-switch">
         <input type="checkbox" id="languageToggle" />
         <span class="slider"></span>
       </label>
-      <span class="toggle-label">🇧🇷/🇺🇸</span>
+      <span class="flag-icon">🇺🇸</span>
     </div>
 
     <main>
