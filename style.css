@@ -42,7 +42,7 @@ body {
     max-width: 600px;
     background-color: rgba(255, 255, 255, 0.3); /* Fundo branco quase transparente */
     backdrop-filter: blur(5px); /* Adiciona um leve desfoque no fundo */
-    color: #000; /* Cor do texto */
+    color: #000; /* Cor do texto */    
   }
 
   .language-toggle {
