@@ -46,23 +46,25 @@ body {
   }
 
   .language-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px 0;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
 
-  .toggle-switch {
-    position: relative;
-    width: 60px;
-    height: 34px;
-    margin: 0 10px;
-  }
-  .toggle-switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
+.toggle-switch {
+  position: relative;
+  width: 60px;
+  height: 34px;
+  margin: 0 10px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+  
   .slider {
     position: absolute;
     cursor: pointer;
@@ -73,7 +75,13 @@ body {
     background-color: #ccc;
     transition: 0.4s;
     border-radius: 34px;
+  
+    /* Bandeira do Brasil como fundo padrão (ocupa o toggle inteiro) */
+    background-image: url('https://cdn-icons-png.flaticon.com/512/197/197386.png');
+    background-size: 100%; /* Ocupa o fundo todo */
+    background-position: center; /* Centraliza a bandeira */
   }
+  
   .slider:before {
     position: absolute;
     content: "";
@@ -85,18 +93,21 @@ body {
     transition: 0.4s;
     border-radius: 50%;
   }
+  
   input:checked + .slider {
     background-color: #2196f3;
+    
+    /* Bandeira dos EUA ao marcar (ocupa o fundo todo) */
+    background-image: url('https://cdn-icons-png.flaticon.com/512/197/197484.png');
+    background-size: 100%; /* Ocupa o fundo todo */
+    background-position: center; /* Centraliza a bandeira */
   }
+  
   input:checked + .slider:before {
     transform: translateX(26px);
   }
-
-  /* Estilo para os ícones de bandeira */
-  .flag-icon {
-    font-size: 24px;
-  }
-
+  
+  
   h1 {
     margin: 0;
     font-size: 24px;
